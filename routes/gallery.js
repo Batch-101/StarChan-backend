@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const Picture = require('../models/pictures');
-const toFrenchDate = require('../../Frontend/modules/toFrenchDate');
+const toFrenchDate = require('../modules/toFrenchDate');
 const User = require('../models/users');
 
 
