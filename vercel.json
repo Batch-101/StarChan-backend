@@ -22,7 +22,7 @@
                 },
                 {
                     "key": "Access-Control-Allow-Origin",
-                    "value": "*"
+                    "value": "starchan-backend.vercel.app"
                 },
                 {
                     "key": "Access-Control-Allow-Methods",
