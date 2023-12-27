@@ -113,16 +113,6 @@ router.get('/:id', (req, res) => {
     })
 })
 
-// Creation router GET pour récupérer user associé au sujet
-
-router.get('/user', (req, res) => {
-    const userID = req.body.user._id
-    Subject.findOne(userID).then(subject => {
-        res.json({ subject, user: userID })
-    })
-})
-
-
 // Creation route GET pour récupérer les sujets liés à la catégorie
 
 router.get('/:categoryId', (req, res) => {
