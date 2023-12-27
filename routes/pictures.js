@@ -12,7 +12,7 @@ const User = require('../models/users');
 router.post('/uploadToProfile/:email', async (req, res) => {
 
     // Génère un chemin unique pour sauvegarder temporairement la photo
-    const photoPath = `./tmp/${uniqid()}.jpg`;
+    const photoPath = `/tmp/${uniqid()}.jpg`;
 
     // Déplace la photo vers le chemin spécifié
     const resultMove = await req.files.image.mv(photoPath);
@@ -55,7 +55,7 @@ router.post('/uploadToProfile/:email', async (req, res) => {
 
 
 router.post('/uploadToGallery', async (req, res) => {
-    const photoPath = `./tmp/${uniqid()}.jpg`;
+    const photoPath = `/tmp/${uniqid()}.jpg`;
     const resultMove = await req.files.image.mv(photoPath);
 
     if (!resultMove) {
@@ -73,7 +73,7 @@ router.post('/uploadToGallery', async (req, res) => {
 
 
 router.post('/uploadToForum', async (req, res) => {
-    const photoPath = `./tmp/${uniqid()}.jpg`;
+    const photoPath = `/tmp/${uniqid()}.jpg`;
     const resultMove = await req.files.image.mv(photoPath);
 
     if (!resultMove) {
