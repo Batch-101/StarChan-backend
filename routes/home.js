@@ -17,12 +17,17 @@ router.post('/search', async (req, res) => {
 
         // Filtre les sujets qui correspondent aux mots-clés fournis
         subjects.map(subject => {
-            const title = subject.title;
+
+            // Normalise la chaîne en utilisant la forme de décomposition Unicode (NFD)
+            // Supprime les caractères diacritiques (accents) de la chaîne résultante
+            const title = subject.title.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+
             let isMatching = true;
 
             // Vérifie chaque mot-clé dans le titre du sujet
             keywords.map(keyword => {
-                const regex = new RegExp(`\\b${keyword}\\b`, "i");
+                const normalizedKeyword = keyword.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
+                const regex = new RegExp(`\\b${normalizedKeyword}\\b`, "i");
 
                 // Si le mot-clé ne correspond pas, indique qu'il ne correspond pas
                 if (!regex.test(title)) {
