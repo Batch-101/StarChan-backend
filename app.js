@@ -13,7 +13,7 @@ var subjectsRouter = require('./routes/subjects');
 var picturesRouter = require('./routes/pictures');
 var weatherRouter = require('./routes/weather');
 var galleryRouter = require('./routes/gallery');
-var homeRouter = require('./routes/home');
+var forumRouter = require('./routes/forum');
 
 var app = express();
 
@@ -36,7 +36,7 @@ app.use('/subjects', subjectsRouter);
 app.use('/pictures', picturesRouter);
 app.use('/weather', weatherRouter);
 app.use('/gallery', galleryRouter);
-app.use('/home', homeRouter);
+app.use('/forum', forumRouter);
 
 
 module.exports = app;
